@@ -1,0 +1,3 @@
+# https://github.com/mochajs/mocha/blob/master/example/config/.mocharc.yml
+reporter: spec
+spec: test/**/*.unit.js

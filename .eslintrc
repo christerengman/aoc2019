@@ -1,0 +1,33 @@
+{
+  "plugins": [
+    "mocha"
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:mocha/recommended"
+  ],
+  "env": {
+    "mocha": true
+  },
+  "rules": {
+    "no-underscore-dangle": "off",
+    "no-console": "off",
+    "prefer-destructuring": "warn",
+    "object-curly-newline": "off",
+    "no-await-in-loop": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 160,
+        "ignoreComments": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "linebreak-style": "off",
+    "newline-per-chained-call": "off",
+    "mocha/no-mocha-arrows": "off",
+    "mocha/no-hooks-for-single-case": "off"
+  }
+}
