@@ -1,10 +1,16 @@
-const chai = require('chai');
-const day01 = require('../src/01/01');
+const { expect } = require('chai');
+const rewire = require('rewire');
 
-const { expect } = chai;
+const day01 = rewire('../src/01/01');
 
 describe('Day 01', () => {
   describe('#calculateModuleFuel', () => {
+    let calculateModuleFuel;
+
+    before(() => {
+      calculateModuleFuel = day01.__get__('calculateModuleFuel');
+    });
+
     context('with example data', () => {
       /* eslint-disable mocha/no-setup-in-describe */
       const examples = [
@@ -29,7 +35,7 @@ describe('Day 01', () => {
       examples.forEach((data) => {
         context(`given mass ${data.mass}`, () => {
           it(`should return ${data.fuel}`, () => {
-            const res = day01.calculateModuleFuel(data.mass);
+            const res = calculateModuleFuel(data.mass);
             expect(res).to.eq(data.fuel);
           });
         });
@@ -39,6 +45,11 @@ describe('Day 01', () => {
   });
 
   describe('#calculateModuleFuelRecursive', () => {
+    let calculateModuleFuelRecursive;
+
+    before(() => {
+      calculateModuleFuelRecursive = day01.__get__('calculateModuleFuelRecursive');
+    });
     context('with example data', () => {
       /* eslint-disable mocha/no-setup-in-describe */
       const examples = [
@@ -59,7 +70,7 @@ describe('Day 01', () => {
       examples.forEach((data) => {
         context(`given mass ${data.mass}`, () => {
           it(`should return ${data.fuel}`, () => {
-            const res = day01.calculateModuleFuelRecursive(data.mass);
+            const res = calculateModuleFuelRecursive(data.mass);
             expect(res).to.eq(data.fuel);
           });
         });

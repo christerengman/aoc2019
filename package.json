@@ -4,7 +4,7 @@
   "description": "Advent of Code 2019",
   "main": "src/index.js",
   "scripts": {
-    "pretest": "npx eslint src test",
+    "pretest": "eslint src test",
     "test": "mocha",
     "prestart": "npm test",
     "start": "node src/index.js"
@@ -25,6 +25,7 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-mocha": "^6.2.2",
-    "mocha": "^6.2.2"
+    "mocha": "^6.2.2",
+    "rewire": "^4.0.1"
   }
 }
